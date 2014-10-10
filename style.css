@@ -1,0 +1,720 @@
+/* 
+Theme Name:     WP StrapGrid Lite
+Theme URI:      http://www.wpstrapcode.com/wpstrapgrid/
+Description:    WP StrapGrid Lite is clean and light WordPress theme built on Twitter Bootstrap with a grid layout format home page. Sporting the Bootstrap Carousel to compliment the grid contents (posts) plus a home page intro widget area – the theme customizer presents the end user with options to hide the navbar, set slider to fade or slide plus the option to hide the carousel altogether, hide the footer credit links plus add your own custom copyright details. See website for more details and documentation.  
+Author:         WP Strap Code
+Author URI:     http://wpstrapcode.com
+Version:        1.0.8
+License:		GNU General Public License v3.0
+License URI:	http://www.gnu.org/licenses/gpl-3.0.html
+Tags:           light, white, gray, blue, right-sidebar, custom-menu, flexible-width, featured-images, full-width-template, threaded-comments, two-columns, translation-ready 
+*/
+
+/*  Copyright 2013  WP Strap Code.  (email : info@wpstrapcode.com)
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License version 3,
+as published by the Free Software Foundation.
+
+You may NOT assume that you can use any other version of the GPL.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301
+USA
+
+The license for this software can also likely be found here:
+http://www.gnu.org/licenses/gpl-3.0.html
+*/
+
+    /* GLOBAL STYLES
+    -------------------------------------------------- */
+    /* Padding below the footer and lighter body text */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+    margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+	
+    body {
+      padding-bottom: 40px;
+      color: #5a5a5a;
+    }
+	
+	audio,
+    canvas,
+    video {
+	  display: inline-block;
+    }
+    audio:not([controls]) {
+	  display: none;
+    }
+
+/* Make sure videos and embeds fit their containers */
+    embed,
+    iframe,
+    object,
+    video {
+	  max-width: 100%;
+	  max-height: 400px;
+    }
+   
+/* Alignment */
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.625em;
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.625em;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/**
+ * Repeatable patterns
+ * ----------------------------------------------------------------------------
+ */
+
+/**
+ * Genericons, a flexible icon-font.
+ * License: GPL version 2 or any later version with font exception (http://www.gnu.org/licenses/gpl-faq.html#FontException)
+ * See also LICENSE.txt and COPYING.txt in the ./fonts directory.
+ * Thanks to FontSquirrel for web-font conversion!
+ * More info: genericons.com
+ */
+@font-face {
+	font-family: 'Genericons';
+	src: url('fonts/genericons-regular-webfont.eot');
+	src: url('fonts/genericons-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/genericons-regular-webfont.woff') format('woff'),
+		 url('fonts/genericons-regular-webfont.ttf') format('truetype'),
+		 url('fonts/genericons-regular-webfont.svg#genericonsregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.genericon:before,
+.menu-toggle:after,
+.featured-post:before,
+.date a:before,
+.entry-meta .author a:before,
+.format-audio .entry-content:before,
+.comments-link a:before,
+.tags-links a:first-child:before,
+.categories-links a:first-child:before,
+.edit-link a:before,
+.attachment .entry-title:before,
+.attachment-meta:before,
+.attachment-meta a:before,
+.comment-awaiting-moderation:before,
+.comment-reply-link:before,
+#reply-title small a:before,
+.bypostauthor .fn:before,
+.error404 .page-title:before {
+	-webkit-font-smoothing: antialiased;
+	font: normal 16px/1 'Genericons';
+	vertical-align: text-bottom;
+}
+
+/* Clearing floats */
+.clear:after,
+.attachment .entry-header:after,
+.site-footer .widget-area:after,
+.entry-content:after,
+.page-content:after,
+.navigation:after,
+.nav-links:after,
+.gallery:after,
+.comment:after {
+	clear: both;
+}
+
+.clear:before,
+.clear:after,
+.attachment .entry-header:before,
+.attachment .entry-header:after,
+.site-footer .widget-area:before,
+.site-footer .widget-area:after,
+.entry-content:before,
+.entry-content:after,
+.page-content:before,
+.page-content:after,
+.navigation:before,
+.navigation:after,
+.nav-links:before,
+.nav-links:after,
+.gallery:before,
+.gallery:after,
+.comment:before,
+.comment:after {
+	content: "";
+	display: table;
+}
+
+.entry-content,
+.entry-summary {
+	margin: 0 1.1em 0 0;
+}
+
+.entry-summary {
+	margin: 0 1.1em 0 0;
+}
+
+/**
+ * Entry Meta
+ * ----------------------------------------------------------------------------
+ */
+
+.entry-meta {
+	clear: both;
+	font-size: 14px;
+	line-height: 1.5;
+}
+
+.entry-meta span.tag-links {
+	color:  #0088CC;
+}
+
+.entry-meta a {
+	color:  #0088CC;
+}
+
+.entry-meta a:hover {
+	color: #ea9629;
+}
+
+.entry-meta > span {
+	margin-right: 20px;
+}
+
+.entry-meta > span:last-child {
+	margin-right: 0;
+}
+
+.featured-post:before {
+	content: '\f308';
+	margin-right: 2px;
+}
+
+.entry-meta .date a:before {
+	content: '\f303';
+	position: relative;
+}
+
+.comments-link a:before {
+	content: '\f300';
+	margin-right: 2px;
+	top: -1px;
+	position: relative;
+}
+
+.entry-meta .author a:before {
+	content: '\f304';
+	top: -1px;
+	position: relative;
+}
+
+.categories-links a:first-child:before {
+	content: '\f301';
+}
+
+.tags-links a:first-child:before {
+	content: '\f302';
+	top: -1px;
+	position: relative;
+}
+
+.edit-link a:before {
+	content: '\f411';
+	top: -1px;
+	position: relative;
+}
+
+/**
+ * Comments
+ * ----------------------------------------------------------------------------
+ */
+
+.comments-title,
+.comment-list,
+#reply-title,
+.must-log-in,
+#respond #commentform,
+#respond iframe {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 740px;
+	width: 100%;
+}
+
+.sidebar .comments-title,
+.sidebar .comment-list,
+.sidebar .must-log-in,
+.sidebar #reply-title,
+.sidebar .comment-navigation,
+.sidebar #respond #commentform {
+	max-width: 1040px;
+	padding-left: 60px;
+	padding-right: 376px;
+}
+
+.comments-title {
+	font: 300 italic 28px "Source Sans Pro", Helvetica, sans-serif;
+}
+
+.comment-list,
+.comment-list .children {
+	list-style-type: none;
+	padding: 0;
+}
+
+.comment-list .children {
+	margin-left: 20px;
+}
+
+.comment-list > li:after,
+.comment-list .children > li:before {
+	background: url(assets/img/dotted-line.png) repeat left top;
+	background-size: 4px 4px;
+	content: "";
+	display: block;
+	height: 1px;
+	width: 100%;
+}
+
+.comment-list > li:last-child:after {
+	display: none;
+}
+
+.comment-body {
+	padding: 24px 0;
+	position: relative;
+}
+
+.comment-author {
+	float: left;
+	max-width: 74px;
+}
+
+.comment-author .avatar {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.comment-author .fn,
+.comment-author .url,
+.comment-reply-link,
+.comment-reply-login {
+	color: #0088cc;
+	font-size: 14px;
+	font-style: normal;
+}
+
+.says {
+	display: none;
+}
+
+.no-avatars .comment-author {
+	margin: 0 0 5px;
+	max-width: 100%;
+	position: relative;
+}
+
+.no-avatars .comment-metadata,
+.no-avatars .comment-content,
+.no-avatars .comment-list .reply {
+	width: 100%;
+}
+
+.bypostauthor > .comment-body .fn:before {
+	content: "\f408";
+	vertical-align: text-top;
+}
+
+.comment-list .edit-link {
+	margin-left: 20px;
+}
+
+.comment-metadata,
+.comment-awaiting-moderation,
+.comment-content,
+.comment-list .reply {
+	float: right;
+	width: 79%;
+	width: -webkit-calc(100% - 124px);
+	width:         calc(100% - 124px);
+}
+
+.comment-meta,
+.comment-meta a {
+	color: #a2a2a2;
+	font-size: 13px;
+}
+
+.comment-meta a:hover {
+	color: #ea9629;
+}
+
+.comment-metadata {
+	margin-bottom: 20px;
+}
+
+.ping-meta {
+	color: #a2a2a2;
+	font-size: 13px;
+	line-height: 2;
+}
+
+.comment-awaiting-moderation {
+	color: #a2a2a2;
+}
+
+.comment-awaiting-moderation:before {
+	content: "\f414";
+	margin-right: 5px;
+	position: relative;
+	top: -2px;
+}
+
+.comment-reply-link:before,
+.comment-reply-login:before {
+	content: "\f412";
+	margin-right: 3px;
+}
+
+/* Comment form */
+#respond {
+	background-color: #f7f5e7;
+	padding: 30px 0;
+}
+
+.comment #respond {
+	margin-bottom: 20px;
+	padding: 20px;
+}
+
+#reply-title {
+	font: 300 italic 28px "Source Sans Pro", Helvetica, sans-serif;
+}
+
+#reply-title small a {
+	color: #131310;
+	display: inline-block;
+	float: right;
+	height: 16px;
+	overflow: hidden;
+	width: 16px;
+}
+
+#reply-title small a:hover {
+	color: #ed331c;
+	text-decoration: none;
+}
+
+#reply-title small a:before {
+	content: "\f406";
+	vertical-align: top;
+}
+
+.sidebar .comment-list #reply-title,
+.sidebar .comment-list #respond #commentform {
+	padding: 0;
+}
+
+#commentform .comment-notes {
+	margin-bottom: 15px;
+}
+
+#commentform .comment-form-author,
+#commentform .comment-form-email,
+#commentform .comment-form-url {
+	margin-bottom: 8px;
+}
+
+#commentform [for="author"],
+#commentform [for="email"],
+#commentform [for="url"],
+#commentform [for="comment"] {
+	float: left;
+	padding: 5px 0;
+	width: 120px;
+}
+
+#commentform .required {
+	color: #ed331c;
+}
+
+#commentform input[type="text"],
+#commentform input[type="email"],
+#commentform input[type="url"] {
+	max-width: 270px;
+	width: 60%;
+}
+
+#commentform textarea {
+	width: 100%;
+}
+
+.form-allowed-tags,
+.form-allowed-tags code {
+	color: #686758;
+	font-size: 12px;
+	white-space:normal;
+}
+
+.form-allowed-tags code {
+	font-size: 10px;
+	margin-left: 3px;
+}
+
+.comment-list .pingback,
+.comment-list .trackback {
+	padding-top: 24px;
+}
+
+.comment-navigation {
+	font-size: 20px;
+	font-style: italic;
+	font-weight: 300;
+	margin: 0 auto;
+	max-width: 604px;
+	padding: 20px 0 30px;
+	width: 100%;
+}
+
+.no-comments {
+	background-color: #f7f5e7;
+	font-size: 20px;
+	font-style: italic;
+	font-weight: 300;
+	margin: 0;
+	padding: 40px 0;
+	text-align: center;
+}
+
+.sidebar .no-comments {
+	padding-left: 60px;
+	padding-right: 376px;
+}
+
+.nav-previous {
+	float: left;
+	width: 50%;
+}
+.nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+/*HTML5 display-role reset for older browsers - tables and blockquotes */
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* =Tables
+-------------------------------------------------------------- */
+th, 
+td,
+table {
+	border: 1px solid #ddd;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+hr, 
+dl, 
+pre,
+form,
+table,
+address, 
+blockquote {
+	margin: 1.6em 0;
+}
+
+th, td {
+	padding: .8em;
+}
+
+table .label {
+	background-color: transparent;
+	border: none;
+	color: inherit;
+	font-size: inherit;
+	text-transform: inherit;
+}
+/* Hack for Jetpack Subscription title */
+.widget label {
+	font-size: 26px !important;
+	font-weight: bold;
+}
+
+.search-form {
+    padding-top: 20px;
+}
+
+/* =Blockquote
+-------------------------------------------------------------- */
+blockquote {
+	background: #f9f9f9;
+	border: none;
+	border-left: 4px solid #d6d6d6 !important;
+	margin: 20px;
+	overflow: auto;
+	padding: 0 0 10px 12px;
+}
+
+blockquote p {
+	font-family: 'Georgia', 'Times New Roman', Times, serif;
+	font-style: italic;
+	font-size: 18px;
+	line-height: 26px;
+}
+
+/* Attachment Images */
+img[class*="attachment-"] {
+	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+}
+
+/* =Single image attachment view
+-------------------------------------------------------------- */
+
+.article.attachment {
+	overflow: hidden;
+}
+.image-attachment div.attachment {
+	text-align: center;
+}
+.image-attachment div.attachment p {
+	text-align: center;
+}
+.image-attachment div.attachment img {
+	display: block;
+	height: auto;
+	margin: 0 auto;
+	max-width: 100%;
+}
+.image-attachment .entry-caption {
+	margin-top: 8px;
+	margin-top: 0.571428571rem;
+}
+
+/* Image Alignment
+----------------------------------------------------------------------------------------*/
+img.alignnone {
+  display: block;
+  position: relative;
+}
+img.alignright {
+  float: right;
+  margin: 10px;
+  display: inline;
+}
+img.alignleft {
+  float: left;
+  margin: 10px;
+  display: inline;
+  clear: both;
+}
+img.aligncenter {
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+.entry-content embed,
+.entry-content iframe,
+.entry-content object,
+.entry-content video {
+	margin-bottom: 12px;
+	margin-bottom: 0.857142857rem;
+	max-height: 150px;
+}
+.entry-content p,
+.entry-summary p,
+.comment-content p,
+.mu_register p {
+	margin: 0 0 12px;
+	margin: 0 0 0.857142857rem;
+	line-height: 1.714285714;
+}
+
+.postmetadata { margin: 10px 0 10px 0;}
+
+/* Caption Styling
+----------------------------------------------------------------------------------------*/
+.wp-caption {
+	max-width: 100%;
+}
+
+.wp-caption .wp-caption-text,
+.gallery-caption,
+.entry-caption {
+	padding: 0 9px 9px;
+	text-align: center;
+}
+
+.wp-caption .wp-caption-text {
+	padding-top: 9px;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+/* Sticky Post Styles
+----------------------------------------------------------------------------------------*/
+.sticky {
+
+}
+
+/* Extra Styles */
+
+.separator {
+  border: 2px solid #d6d6d6;
+  margin: 10px 0 10px 0;
+}
+
+/* Clearing Floats */
+.clearboth {
+  height: 0;
+  clear: both;
+  margin: 0;
+  padding: 0;
+}
